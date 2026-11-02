@@ -1,0 +1,22 @@
+/* Read my folder Collection Photo*/
+let myArrayImage = [
+    "ahmet.png",
+    "alaska.png",
+    "anime.png",
+    "astronomy-.jpg",
+    "atmosphere.png",
+    "autumn.jpg",
+    "blue-tit.png",
+    "carla_manneh.png",
+    "hurricane.png",
+    "lake.jpg.png",
+    "landscape.jpg",
+    "moorente.png",
+    "sea.png",
+    "bunting.png",
+    "cubs.png",
+    "studiofriluma.jpg",
+    "sunset.png",
+    "waterfall.png",
+    "travel.jpg.png",
+];
