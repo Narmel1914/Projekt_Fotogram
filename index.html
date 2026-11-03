@@ -32,18 +32,27 @@
                     <div class="galerie_photo" id="galerie_photo"> </div>
                     <dialog id="dialog_wrapper">
                         <div class="dialog_content">
-                            <div id="single_dialog_titel">
-                                <p id="name_img"></p>
+                            <div class="dialog_top">
+                                <div class="single_dialog_titel">
+                                    <p id="name_img"></p>
+                                    
+                                </div>
+                                <div class="close_dialog">
+                                    <button id="btn_close">x</button>
+                                </div>
                             </div>
-                            <div id="single_dialog_img">
+
+
+                            <div class="single_dialog_img">
                                 <img id="big_img" src="" alt="">
                             </div>
+
                             <div class="dialog_nav">
                                 <button id="btn_prev">&larr;</button>
+                                <span id="counter"></span>
                                 <button id="btn_next">&rarr;</button>
                             </div>
                         </div>
-                        <button id="btn_close">X</button>
                     </dialog>
                 </div>
         </section>
@@ -72,3 +81,5 @@
 <script src="fotogram.js" defer></script>
 
 </html>
+
+

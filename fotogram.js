@@ -19,62 +19,93 @@ console.log(myArrayImage.length);
 /*-----------------------------------------Declaration variable---------------------------------------*/
 const myPath = "./Galerie-Photo/";
 let galerie = document.getElementsByClassName("galerie_photo"); // minimal image
+let getImgbyID = document.getElementById("galerie_photo");
 let boxDialog = document.getElementById("dialog_wrapper");
 
 
-let nameImg = document.getElementById("name_img");
-let bigImg = document.getElementById("big_img");
+/*let nameImg = document.getElementById("name_img");
+let bigImg = document.getElementById("big_img");*/
 
 let btnClose = document.getElementById("btn_close");
 
-
+const counter = document.getElementById("counter");
+const btnPrev = document.getElementById("btn_prev");
+const btnNext = document.getElementById("btn_next");
 const logoFotogram = document.getElementById("logo")
 const titelFotogram = document.getElementById("logo_titel")
-let tableauAlt = [];
-let indexCourant = 0;
 
 
 /*-----------------------------------------Main_Task-------------------------------------*/
 
 
 function init() {
-    console.log("Fotogram")
     readContentPhoto();
     openDialog();
+    showImage();
+
+    closeDialog();
+    OutputDialogClose();
+
+
 }
 
 /*-----------------------------------------Main_Task-------------------------------------*/
 
 
 function readContentPhoto() {
+
     for (let i = 0; i < myArrayImage.length; i++) {
 
         document.getElementById("galerie_photo").innerHTML += `
-            <img src="${myPath}${myArrayImage[i]}" alt="" >
+            <img src="${myPath}${myArrayImage[i]}" 
+            alt="${myArrayImage[i]}" >
             `;
     }
 }
 
 
 // Add Eventlistener to every image
-galerie.addEventListener('click', openDialog);
+getImgbyID.addEventListener('click', openDialog);
+
 //  created our template function
 
-function openDialog(path) {
-    const alt = galerie.getAttribute("alt");
-    for (let index = 0; index < myArrayImage.length; index++) {
-
-        bigImg.setAttribute("src", path + myArrayImage[index]);
-        bigImg.setAttribute("alt", myArrayImage[index]);
-        nameImg.textContent = myArrayImage[index];
-    }
+function openDialog(event) {
+    const clickedImage = event.target;
+    const scr = clickedImage.src;
+    const alt = clickedImage.alt;
+    const clickedIndex = myArrayImage.indexOf(alt);
+    showImage(clickedIndex);
     boxDialog.showModal();
-    //console.log(":", nameImg);
-
 }
-openDialog(myPathpath);
+
+
+// Display the image with number “index” in the dialogue box
+function showImage(index) {
+    document.getElementById("big_img").src = `${myPath}${myArrayImage[index]}`;
+    document.getElementById("big_img").alt = `${myArrayImage[index]}`;
+    document.getElementById("name_img").textContent = `${myArrayImage[index]}`;
+    document.getElementById("counter").textContent = (index + 1) + "/" + myArrayImage.length;
+    const imgIndex = index;
+    return imgIndex;
+}
+
+// Implement the ‘Next’ and ‘Previous’ features
+
+currentIndex = showImage(index);
+
+const previewBtn = document.getElementById("click", "btn_prev");
+const nextBtn = document.getElementById("click", "btn_next");
+
+
+previewBtn.addEventListener("click", goBackward);
+nextBtn.addEventListener("click", goForward);
+
 
 btnClose.addEventListener('click', closeDialog);
+
+
+
+
 
 function closeDialog() {
     boxDialog.close();
