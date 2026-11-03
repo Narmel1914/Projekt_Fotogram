@@ -1,31 +1,8 @@
 /* Read my folder Collection Photo*/
-/*const myArrayImage = [
-    "ahmet.jpg",
-    "alaska.jpg",
-    "anime.jpg",
-    "astronomy.jpg",
-    "atmosphere.jpg",
-    "autumn.jpg",
-    "blue-tit.jpg",
-    "carla_manneh.jpg",
-    "hurricane.jpg",
-    "lake.jpg",
-    "landscape.jpg",
-    "moorente.jpg",
-    "sea.jpg",
-    "bunting.jpg",
-    "cubs.jpg",
-    "studiofriluma.jpg",
-    "sunset.jpg",
-    "waterfall.jpg",
-    "travel.jpg.jpg",
-];
-*/
-
 const myArrayImage = [
     "alaska.jpg",
     "anime.jpg",
-    "atmosphere.png",
+    "atmosphere.jpg",
     "blue-tit.jpg",
     "hurricane.jpg",
     "lake.jpg",
@@ -37,49 +14,80 @@ const myArrayImage = [
     "winter.jpg",
 ]
 
+console.log(myArrayImage.length);
 
-//let contentImage = document.getElementsByTagName("img")
-//let contentCaptionPhoto = document.getElementById("caption_photo");
-const galerie = document.getElementById("galerie_photo");
+/*-----------------------------------------Declaration variable---------------------------------------*/
 const myPath = "./Galerie-Photo/";
+let galerie = document.getElementsByClassName("galerie_photo"); // minimal image
+let boxDialog = document.getElementById("dialog_wrapper");
 
-const logo_fotogram = document.getElementById("logo")
-const titel_fotogram = document.getElementById("logo_titel")
 
-function setHeader() {
-    logo_fotogram.style.width = "40px";
-    logo_fotogram.style.height = "38px"
+let nameImg = document.getElementById("name_img");
+let bigImg = document.getElementById("big_img");
+
+let btnClose = document.getElementById("btn_close");
+
+
+const logoFotogram = document.getElementById("logo")
+const titelFotogram = document.getElementById("logo_titel")
+let tableauAlt = [];
+let indexCourant = 0;
+
+
+/*-----------------------------------------Main_Task-------------------------------------*/
+
+
+function init() {
+    console.log("Fotogram")
+    readContentPhoto();
+    openDialog();
 }
 
-readContentPhoto(myPath);
-
-function readContentPhoto(path) {
+/*-----------------------------------------Main_Task-------------------------------------*/
 
 
-    for (let i = 0; i <= myArrayImage.length - 1; i++) {
-        //console.log("path =", path);
-        //console.log("fichier =", myArrayImage[i]);
-        //console.log("src final =", path + myArrayImage[i]);
-        const myImg = document.createElement("img");
-        myImg.setAttribute("width", "150");
-        myImg.setAttribute("height", "150");
-        myImg.setAttribute("style", "border-radius: 10px;");
-        myImg.setAttribute("src", path + myArrayImage[i]);  //`${path}${myArrayImage[i]}`
-        myImg.setAttribute("alt", "Photo" + (i + 1));
-        //console.log("image$", myImg);
-        galerie.appendChild(myImg);
+function readContentPhoto() {
+    for (let i = 0; i < myArrayImage.length; i++) {
+
+        document.getElementById("galerie_photo").innerHTML += `
+            <img src="${myPath}${myArrayImage[i]}" alt="" >
+            `;
+    }
+}
+
+
+// Add Eventlistener to every image
+galerie.addEventListener('click', openDialog);
+//  created our template function
+
+function openDialog(path) {
+    const alt = galerie.getAttribute("alt");
+    for (let index = 0; index < myArrayImage.length; index++) {
+
+        bigImg.setAttribute("src", path + myArrayImage[index]);
+        bigImg.setAttribute("alt", myArrayImage[index]);
+        nameImg.textContent = myArrayImage[index];
+    }
+    boxDialog.showModal();
+    //console.log(":", nameImg);
+
+}
+openDialog(myPathpath);
+
+btnClose.addEventListener('click', closeDialog);
+
+function closeDialog() {
+    boxDialog.close();
+}
+// Opend Dialog content
+
+// Output Dialog  area Closed
+boxDialog.addEventListener('click', OutputDialogClose);
+function OutputDialogClose(event) {
+    if (event.target === boxDialog) {
+        boxDialog.close()
     }
 
-    galerie.style.display = "flex";
-    galerie.style.flexWrap = "wrap";
-    galerie.style.gap = "20px";
-    galerie.style.margin = "50px"
-
 }
 
-const footer = document.getElementsById("content_footer");
-function setFooter() {
-    footer.style.display = "flex";
-    footer.style.flexDirection = "column";
-
-}
+/*-----------------------------------------Footer---------------------------------------*/

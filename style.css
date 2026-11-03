@@ -3,8 +3,13 @@
   margin: 0px;
   box-sizing: border-box;
 }
+body {
+  max-height: 100dvh;
+  width: auto;
+}
 .content_header {
   background-color: #09212a;
+  max-height: 60px;
 }
 .logo_und_titel {
   width: 205px;
@@ -42,8 +47,73 @@ main {
 .galerie_photo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 30px;
 }
+.galerie_photo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.galerie_photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#dialog_wrapper {
+  border: 10px solid;
+  border-radius: 30px;
+  padding: 0;
+  background-color: #06171e;
+}
+#dialog_wrapper::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.dialog_content {
+  padding: 20px;
+  text-align: center;
+}
+
+#single_dialog_titel {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#name_img {
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-style: 700px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#big_img {
+  display: block;
+  max-width: 100%;
+  max-height: 50vh;
+  margin: 0 auto;
+}
+
+#btn_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1441px) {
   header {
     padding: 0px max(120px, calc(50% - 720px));

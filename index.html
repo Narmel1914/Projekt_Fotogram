@@ -7,7 +7,7 @@
     <title>Projekt-Fotogram</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="content_header">
             <div class="logo_und_titel">
@@ -29,12 +29,26 @@
                     <h1>Your Personal Photo album</h1>
                 </div>
                 <div class="dialog_photo">
-                    <div id="galerie_photo"> </div>
+                    <div class="galerie_photo" id="galerie_photo"> </div>
+                    <dialog id="dialog_wrapper">
+                        <div class="dialog_content">
+                            <div id="single_dialog_titel">
+                                <p id="name_img"></p>
+                            </div>
+                            <div id="single_dialog_img">
+                                <img id="big_img" src="" alt="">
+                            </div>
+                            <div class="dialog_nav">
+                                <button id="btn_prev">&larr;</button>
+                                <button id="btn_next">&rarr;</button>
+                            </div>
+                        </div>
+                        <button id="btn_close">X</button>
+                    </dialog>
                 </div>
         </section>
     </main>
 </body>
-
 <footer class="footer_wrapper">
     <div class="content_footer">
         <div class="footer_top">
