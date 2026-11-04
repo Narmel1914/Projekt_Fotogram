@@ -41,8 +41,7 @@ const titelFotogram = document.getElementById("logo_titel")
 function init() {
     readContentPhoto();
     openDialog();
-    showImage();
-
+    //showImage();
     closeDialog();
     OutputDialogClose();
 
@@ -67,13 +66,14 @@ function readContentPhoto() {
 // Add Eventlistener to every image
 getImgbyID.addEventListener('click', openDialog);
 
-//  created our template function
-
+//  created our template function  
+let currentIndex = 0;
 function openDialog(event) {
     const clickedImage = event.target;
     const scr = clickedImage.src;
     const alt = clickedImage.alt;
     const clickedIndex = myArrayImage.indexOf(alt);
+    currentIndex = clickedIndex;
     showImage(clickedIndex);
     boxDialog.showModal();
 }
@@ -82,30 +82,49 @@ function openDialog(event) {
 // Display the image with number “index” in the dialogue box
 function showImage(index) {
     document.getElementById("big_img").src = `${myPath}${myArrayImage[index]}`;
-    document.getElementById("big_img").alt = `${myArrayImage[index]}`;
+    document.getElementById("big_img").alt = `${myArrayImage[index].split(".")[0]}`;
     document.getElementById("name_img").textContent = `${myArrayImage[index]}`;
     document.getElementById("counter").textContent = (index + 1) + "/" + myArrayImage.length;
-    const imgIndex = index;
-    return imgIndex;
+
 }
 
 // Implement the ‘Next’ and ‘Previous’ features
 
-currentIndex = showImage(index);
-
-const previewBtn = document.getElementById("click", "btn_prev");
-const nextBtn = document.getElementById("click", "btn_next");
+const previewBtn = document.getElementById("btn_prev");
+const nextBtn = document.getElementById("btn_next");
 
 
 previewBtn.addEventListener("click", goBackward);
+// PreviewStep
+function goBackward() {
+
+    currentIndex = currentIndex - 1;
+    if (currentIndex < 0) {
+        currentIndex = myArrayImage.length - 1;
+    }
+    showImage(currentIndex);
+}
+
+
 nextBtn.addEventListener("click", goForward);
+// Next step
+function goForward() {
+
+    currentIndex = currentIndex + 1;
+    if (currentIndex >= myArrayImage.length) {
+        currentIndex = 0;
+    }
+    showImage(currentIndex);
+}
+
+
+
+
+
+
 
 
 btnClose.addEventListener('click', closeDialog);
-
-
-
-
 
 function closeDialog() {
     boxDialog.close();
