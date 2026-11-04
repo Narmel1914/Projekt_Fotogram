@@ -1,5 +1,5 @@
 /* Read my folder Collection Photo*/
-const myArrayImage = [
+const ARRAYIMAGE = [
     "alaska.jpg",
     "anime.jpg",
     "atmosphere.jpg",
@@ -14,7 +14,7 @@ const myArrayImage = [
     "winter.jpg",
 ]
 
-console.log(myArrayImage.length);
+console.log(ARRAYIMAGE.length);
 
 /*-----------------------------------------Declaration variable---------------------------------------*/
 const myPath = "./Galerie-Photo/";
@@ -41,7 +41,7 @@ const titelFotogram = document.getElementById("logo_titel")
 function init() {
     readContentPhoto();
     openDialog();
-    //showImage();
+    showImage();
     closeDialog();
     OutputDialogClose();
 
@@ -53,11 +53,11 @@ function init() {
 
 function readContentPhoto() {
 
-    for (let i = 0; i < myArrayImage.length; i++) {
+    for (let i = 0; i < ARRAYIMAGE.length; i++) {
 
         document.getElementById("galerie_photo").innerHTML += `
-            <img src="${myPath}${myArrayImage[i]}" 
-            alt="${myArrayImage[i]}" >
+            <img src="${myPath}${ARRAYIMAGE[i]}" 
+            alt="${ARRAYIMAGE[i]}" >
             `;
     }
 }
@@ -72,7 +72,7 @@ function openDialog(event) {
     const clickedImage = event.target;
     const scr = clickedImage.src;
     const alt = clickedImage.alt;
-    const clickedIndex = myArrayImage.indexOf(alt);
+    const clickedIndex = ARRAYIMAGE.indexOf(alt);
     currentIndex = clickedIndex;
     showImage(clickedIndex);
     boxDialog.showModal();
@@ -81,10 +81,10 @@ function openDialog(event) {
 
 // Display the image with number “index” in the dialogue box
 function showImage(index) {
-    document.getElementById("big_img").src = `${myPath}${myArrayImage[index]}`;
-    document.getElementById("big_img").alt = `${myArrayImage[index].split(".")[0]}`;
-    document.getElementById("name_img").textContent = `${myArrayImage[index]}`;
-    document.getElementById("counter").textContent = (index + 1) + "/" + myArrayImage.length;
+    document.getElementById("big_img").src = `${myPath}${ARRAYIMAGE[index]}`;
+    document.getElementById("big_img").alt = `${ARRAYIMAGE[index].split(".")[0]}`;
+    document.getElementById("name_img").textContent = `${ARRAYIMAGE[index]}`;
+    document.getElementById("counter").textContent = (index + 1) + "/" + ARRAYIMAGE.length;
 
 }
 
@@ -100,7 +100,7 @@ function goBackward() {
 
     currentIndex = currentIndex - 1;
     if (currentIndex < 0) {
-        currentIndex = myArrayImage.length - 1;
+        currentIndex = ARRAYIMAGE.length - 1;
     }
     showImage(currentIndex);
 }
@@ -111,7 +111,7 @@ nextBtn.addEventListener("click", goForward);
 function goForward() {
 
     currentIndex = currentIndex + 1;
-    if (currentIndex >= myArrayImage.length) {
+    if (currentIndex >= ARRAYIMAGE.length) {
         currentIndex = 0;
     }
     showImage(currentIndex);
