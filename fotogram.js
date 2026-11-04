@@ -14,24 +14,23 @@ const ARRAYIMAGE = [
     "winter.jpg",
 ]
 
+/* Check value  array lengt*/
 console.log(ARRAYIMAGE.length);
 
 /*-----------------------------------------Declaration variable---------------------------------------*/
 const myPath = "./Galerie-Photo/";
 let galerie = document.getElementsByClassName("galerie_photo"); // minimal image
 let getImgbyID = document.getElementById("galerie_photo");
+
 let boxDialog = document.getElementById("dialog_wrapper");
-
-
-/*let nameImg = document.getElementById("name_img");
-let bigImg = document.getElementById("big_img");*/
-
 let btnClose = document.getElementById("btn_close");
 
 const counter = document.getElementById("counter");
 const btnPrev = document.getElementById("btn_prev");
+
 const btnNext = document.getElementById("btn_next");
 const logoFotogram = document.getElementById("logo")
+
 const titelFotogram = document.getElementById("logo_titel")
 
 
@@ -115,13 +114,8 @@ function goForward() {
         currentIndex = 0;
     }
     showImage(currentIndex);
+
 }
-
-
-
-
-
-
 
 
 btnClose.addEventListener('click', closeDialog);
@@ -140,4 +134,4 @@ function OutputDialogClose(event) {
 
 }
 
-/*-----------------------------------------Footer---------------------------------------*/
+/*-----------------------------------------End  Main task---------------------------------------*/
