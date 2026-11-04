@@ -60,16 +60,21 @@ main {
   gap: 160px;
 }
 .dialog_photo {
-  width: 1170px;
+  /*width: 1170px;*/
+  width: 100%;
   gap: 16px;
 }
-.dialog_titel > h1 {
+.dialog_titel {
+  width: 100% /* 696px*/;
+}
+h1 {
   font-family: "Figtree", sans-serif;
   font-weight: 800;
   font-size: 56px;
   color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
-
 #galerie_photo {
   width: 100%;
   display: flex;
