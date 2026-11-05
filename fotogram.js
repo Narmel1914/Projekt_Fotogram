@@ -15,7 +15,7 @@ const ARRAYIMAGE = [
 ]
 
 /* Check value  array lengt*/
-console.log(ARRAYIMAGE.length);
+
 
 /*-----------------------------------------Declaration variable---------------------------------------*/
 const myPath = "./Galerie-Photo/";
@@ -33,17 +33,12 @@ const logoFotogram = document.getElementById("logo")
 
 const titelFotogram = document.getElementById("logo_titel")
 
-
+let currentIndex = 0;
 /*-----------------------------------------Main_Task-------------------------------------*/
 
 
 function init() {
     readContentPhoto();
-    openDialog();
-    showImage();
-    closeDialog();
-    OutputDialogClose();
-
 
 }
 
@@ -51,9 +46,7 @@ function init() {
 
 
 function readContentPhoto() {
-
     for (let i = 0; i < ARRAYIMAGE.length; i++) {
-
         document.getElementById("galerie_photo").innerHTML += `
             <img src="${myPath}${ARRAYIMAGE[i]}" 
             alt="${ARRAYIMAGE[i]}" >
@@ -61,12 +54,11 @@ function readContentPhoto() {
     }
 }
 
-
 // Add Eventlistener to every image
 getImgbyID.addEventListener('click', openDialog);
 
 //  created our template function  
-let currentIndex = 0;
+
 function openDialog(event) {
     const clickedImage = event.target;
     const scr = clickedImage.src;
@@ -77,11 +69,10 @@ function openDialog(event) {
     boxDialog.showModal();
 }
 
-
 // Display the image with number “index” in the dialogue box
 function showImage(index) {
     document.getElementById("big_img").src = `${myPath}${ARRAYIMAGE[index]}`;
-    document.getElementById("big_img").alt = `${ARRAYIMAGE[index].split(".")[0]}`;
+    document.getElementById("big_img").alt = `${ARRAYIMAGE[index]}`;
     document.getElementById("name_img").textContent = `${ARRAYIMAGE[index]}`;
     document.getElementById("counter").textContent = (index + 1) + "/" + ARRAYIMAGE.length;
 
