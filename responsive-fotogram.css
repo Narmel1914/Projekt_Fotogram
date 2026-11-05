@@ -1,7 +1,6 @@
 @media screen and (min-width: 1920px) {
   header {
     padding: 0px max(120px, calc(50% - 720px));
-    background-color: #09212a;
   }
 
   footer {
@@ -21,33 +20,30 @@
     /*padding-bottom: 80px;
     padding-top: 80px;*/
   }
+
   .br_line {
     display: none;
   }
 }
+
 /*Mobil_view*/
 @media screen and (max-width: 700px) and (max-width: 1167px) {
-  /* main {
-    background-color: #06171e;
-    height: calc(100vh - 165px);
-    width: 100%;
-  }
-*/
   header {
-    width: 100%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    background-color: #09212a;
+    border-radius: 30px 30px 0px 0px;
   }
+
   .logo_und_titel {
-    width: 168px;
+    /*width: 168px;*/
     display: flex;
+
     justify-content: center;
+    align-content: center;
   }
+
   .logo_titel > h3 {
     font-size: 24px;
     display: flex;
+
     align-items: center;
     justify-items: center;
     margin: 0 5px;
@@ -60,6 +56,10 @@
 
   .content_wrapper {
     gap: 80px;
+  }
+
+  #dialog_wrapper {
+    border-radius: 30px 30px 30px 30px;
   }
 
   #galerie_photo {
@@ -100,17 +100,27 @@
   }
 
   .footer_wrapper {
-    background-color: #09212a;
+    border-radius: 0px 0px 30px 30px;
   }
+
   .logo > img {
     width: 25px;
   }
+
   .br_line {
     display: inline;
   }
 }
 
 @media screen and (min-width: 469px) and (max-width: 698px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  .logo_und_titel {
+    justify-content: center;
+  }
+
   .dialog_titel {
     width: 315px;
     display: flex;
@@ -124,10 +134,11 @@
   .dialog_titel h1 {
     font-size: 32px;
     margin: 10px 0px;
-    transform: translateX(200px);
+    transform: translateX(130px);
     display: flex;
     justify-content: center;
   }
+
   .dialog_photo {
     width: 315px;
     display: flex;
@@ -135,6 +146,7 @@
     gap: 16px;
     margin: 0 10px;
   }
+
   #galerie_photo {
     margin: 1px auto;
     transform: translateY(80px);
@@ -144,14 +156,20 @@
 /*Mobil_full_content*/
 
 @media screen and (min-width: 320px) and (max-width: 468px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
   .content_wrapper {
     gap: 170px;
   }
+
   .dialog_titel h1 {
     font-size: 36px;
     margin: 5px 0px;
     transform: translateY(90px);
   }
+
   .dialog_photo {
     width: 300px;
     display: flex;
@@ -159,8 +177,31 @@
     gap: 16px;
     margin: 0 10px;
   }
+
+  .dialog_content {
+    width: 400px;
+  }
+
   #galerie_photo {
     margin: 5px auto;
-    transform: translateY(-40px);
+    transform: translateY(-50px);
+  }
+
+  .dialog_top {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: auto;
+  }
+
+  #btn_close {
+    position: absolute;
+    right: 11px;
+    border: none;
+    background-color: #06171e;
+    color: #fff;
+    font-family: "Figtree", sans-serif;
+    font-size: 24px;
   }
 }
