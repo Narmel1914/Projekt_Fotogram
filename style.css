@@ -16,7 +16,6 @@ header {
   display: flex;
   align-items: center;
   background-color: #09212a;
-  border-radius: 20px 20px 0px 0px;
 }
 main {
   background-color: #06171e;
@@ -58,14 +57,14 @@ main {
   align-items: center;
   justify-content: center;
   width: 1170px;
-  gap: 160px;
+  gap: 80px; /*160px/
 }
 .dialog_photo {
   width: 100%;
   gap: 16px;
 }
 .dialog_titel {
-  width: 100% /* 696px*/;
+  width: 100% /* 696px*/
 }
 h1 {
   font-family: "Figtree", sans-serif;
@@ -109,10 +108,10 @@ h1 {
   padding: 0;
   margin: auto;
   background-color: #06171e;
-  border-radius: 20px 20px 20px 20px;
 }
+
 #dialog_wrapper::backdrop {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dialog_content {
@@ -148,7 +147,7 @@ h1 {
 
 #big_img {
   width: 300px;
-  height: 300px;
+  height: 375px;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -192,7 +191,8 @@ span {
   background-color: #fd5b4f; /* #06171e;*/
   color: red;
   width: 60px;
-  border-radius: 100%;
+  border: 3px double #fff;
+  border-radius: 50px;
   opacity: 0.1;
   cursor: pointer;
   display: flex;
@@ -204,10 +204,10 @@ span {
 
 #btn_next {
   background-color: #fd5b4f; /* #06171e;*/
-  color: red;
+  color: #dd0000;
   width: 60px;
-
-  border-radius: 100%;
+  border: 3px double #fff;
+  border-radius: 50px;
   opacity: 0.1;
   cursor: pointer;
   display: flex;
@@ -219,7 +219,6 @@ span {
 
 .footer_wrapper {
   background-color: #09212a;
-  border-radius: 0px 0px 20px 20px;
 }
 .content_footer {
   width: 100%;
@@ -235,14 +234,13 @@ span {
 }
 .footer_top {
   width: 133px;
-
   display: flex;
   flex-direction: row;
   align-self: center;
   justify-self: center;
-
   margin-top: 16px;
 }
+
 .logo_footer > img {
   width: 30px;
 }
