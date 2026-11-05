@@ -65,14 +65,6 @@ main {
   justify-content: center;
   width: 1170px;
   gap: 80px;
-  /*160px/
-}
-.dialog_photo {
-  width: 100%;
-  gap: 16px;
-}
-.dialog_titel {
-  width: 100% /* 696px*/
 }
 
 h1 {
@@ -97,6 +89,7 @@ h1 {
 .galerie_photo img {
   width: 150px;
   height: 150px;
+
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
@@ -106,7 +99,9 @@ h1 {
 }
 
 .galerie_photo img:hover {
-  border: 2px solid #fff;
+  border:
+    1px solid,
+    white;
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -120,11 +115,7 @@ h1 {
   margin: auto;
   background-color: #06171e;
 }
-/*
-#dialog_wrapper::backdrop {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-*/
+
 .dialog_content {
   padding: 10px;
   text-align: center;
@@ -149,6 +140,7 @@ h1 {
 }
 
 .single_dialog_titel {
+  width: 100%;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -157,10 +149,12 @@ h1 {
   font-family: "Figtree", sans-serif;
   font-size: 24px;
   color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
 #big_img {
-  width: 300px;
   height: 375px;
   display: flex;
   align-items: center;
@@ -169,14 +163,17 @@ h1 {
   object-fit: cover;
 }
 
-#btn_close {
+.btn_close {
   position: absolute;
   right: 70px;
   border: none;
-  background-color: #06171e;
+  border-radius: 1px solid #09212a;
+  opacity: 0.5;
   color: #fff;
+
+  background-color: #09212a;
   font-family: "Figtree", sans-serif;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .dialog_nav {
@@ -189,10 +186,9 @@ h1 {
 }
 
 .dialog_nav button {
-  font-size: 50px;
-  background-color: #06171e;
+  font-size: 25px;
   color: #fd5b4f;
-  line-height: 1;
+  border-radius: 1000px;
 }
 
 .dialog_nav button:hover {
@@ -206,12 +202,11 @@ span {
   margin-top: 16px;
 }
 
-#btn_prev {
+.btn_prev {
   background-color: #fd5b4f;
-  /* #06171e;*/
-  color: red;
-  width: 60px;
-  border: 3px double #fff;
+
+  color: #fd5b4f;
+  width: 10px;
   border-radius: 50px;
   opacity: 0.1;
   cursor: pointer;
@@ -223,13 +218,11 @@ span {
   background-color: #06171e;
 }
 
-#btn_next {
-  background-color: #fd5b4f;
-  /* #06171e;*/
-  color: #dd0000;
-  width: 60px;
-  border: 3px double #fff;
-  border-radius: 50px;
+.btn_next {
+  background-color: #09212a;
+  color: #fd5b4f;
+  width: 30px;
+  border-radius: 100px;
   opacity: 0.1;
   cursor: pointer;
   display: flex;
