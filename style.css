@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Palanquin:wght@100;200;300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0px;
   box-sizing: border-box;
@@ -17,11 +18,13 @@ header {
   align-items: center;
   background-color: #09212a;
 }
+
 main {
   background-color: #06171e;
   height: calc(100vh - 140px);
   width: 100%;
 }
+
 .logo_und_titel {
   width: 215px;
   background-color: #09212a;
@@ -30,6 +33,7 @@ main {
   align-items: center;
   gap: 2px;
 }
+
 .logo_titel > h3 {
   color: #ffffff;
   font-family: "Palanquin", sans-serif;
@@ -38,9 +42,11 @@ main {
   display: flex;
   justify-items: left;
 }
+
 .logo > img {
   width: 40px;
 }
+
 .main_task {
   display: flex;
   justify-content: center;
@@ -51,13 +57,15 @@ main {
   width: 100%;
   background-color: #06171e;
 }
+
 .content_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 1170px;
-  gap: 80px; /*160px/
+  gap: 80px;
+  /*160px/
 }
 .dialog_photo {
   width: 100%;
@@ -66,6 +74,7 @@ main {
 .dialog_titel {
   width: 100% /* 696px*/
 }
+
 h1 {
   font-family: "Figtree", sans-serif;
   font-weight: 800;
@@ -74,6 +83,7 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
 #galerie_photo {
   width: 100%;
   display: flex;
@@ -83,6 +93,7 @@ h1 {
   align-items: center;
   gap: 20px;
 }
+
 .galerie_photo img {
   width: 150px;
   height: 150px;
@@ -128,6 +139,7 @@ h1 {
 
   gap: 10px;
 }
+
 .dialog_top {
   width: 250px;
   display: flex;
@@ -135,10 +147,12 @@ h1 {
   justify-content: space-between;
   align-self: auto;
 }
+
 .single_dialog_titel {
   margin-bottom: 10px;
   font-weight: bold;
 }
+
 #name_img {
   font-family: "Figtree", sans-serif;
   font-size: 24px;
@@ -164,6 +178,7 @@ h1 {
   font-family: "Figtree", sans-serif;
   font-size: 24px;
 }
+
 .dialog_nav {
   display: flex;
   flex-direction: row;
@@ -172,23 +187,28 @@ h1 {
   margin-top: 15px;
   gap: 20px;
 }
+
 .dialog_nav button {
   font-size: 50px;
   background-color: #06171e;
   color: #fd5b4f;
   line-height: 1;
 }
+
 .dialog_nav button:hover {
   background-color: #fd5b4f;
 }
+
 span {
   display: flex;
   color: #ffffff;
   justify-content: center;
   margin-top: 16px;
 }
+
 #btn_prev {
-  background-color: #fd5b4f; /* #06171e;*/
+  background-color: #fd5b4f;
+  /* #06171e;*/
   color: red;
   width: 60px;
   border: 3px double #fff;
@@ -198,12 +218,14 @@ span {
   display: flex;
   align-self: center;
 }
+
 #btn_prev:hover {
   background-color: #06171e;
 }
 
 #btn_next {
-  background-color: #fd5b4f; /* #06171e;*/
+  background-color: #fd5b4f;
+  /* #06171e;*/
   color: #dd0000;
   width: 60px;
   border: 3px double #fff;
@@ -213,6 +235,7 @@ span {
   display: flex;
   align-self: center;
 }
+
 #btn_next:hover {
   background-color: #06171e;
 }
@@ -220,6 +243,7 @@ span {
 .footer_wrapper {
   background-color: #09212a;
 }
+
 .content_footer {
   width: 100%;
   margin-top: -1px;
@@ -232,6 +256,7 @@ span {
 .content_footer {
   width: 225px;
 }
+
 .footer_top {
   width: 133px;
   display: flex;
@@ -248,10 +273,12 @@ span {
 .logo_titel_footer > h3 {
   color: #fff;
 }
+
 .footer_bottom {
   width: 225px;
   margin-bottom: 15px;
 }
+
 .copyright_titel > h3 {
   font-family: "Figtree", sans-serif;
   font-weight: 400;

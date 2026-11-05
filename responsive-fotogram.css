@@ -117,6 +117,7 @@
     display: flex;
     justify-content: center;
   }
+
   .logo_und_titel {
     justify-content: center;
   }
@@ -160,6 +161,7 @@
     display: flex;
     justify-content: center;
   }
+
   .content_wrapper {
     gap: 170px;
   }
