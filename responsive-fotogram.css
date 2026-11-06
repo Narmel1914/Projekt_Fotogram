@@ -17,8 +17,6 @@
 
   main {
     padding: 0px max(50px, calc(50% - 720px));
-    /*padding-bottom: 80px;
-    padding-top: 80px;*/
   }
 
   .br_line {
@@ -28,10 +26,6 @@
 
 /*Mobil_view*/
 @media screen and (max-width: 700px) and (max-width: 1167px) {
-  header {
-    border-radius: 30px 30px 0px 0px;
-  }
-
   .logo_und_titel {
     /*width: 168px;*/
     display: flex;
@@ -58,10 +52,6 @@
     gap: 80px;
   }
 
-  #dialog_wrapper {
-    border-radius: 30px 30px 30px 30px;
-  }
-
   #galerie_photo {
     width: 343px;
     height: calc(100vh - 343px);
@@ -73,7 +63,6 @@
     gap: 10px;
     max-width: 1000px;
     margin: 50px auto;
-    /*margin: 5px auto;*/
     margin-bottom: 2px;
   }
 
@@ -96,11 +85,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin: 0 20px;
-  }
-
-  .footer_wrapper {
-    border-radius: 0px 0px 30px 30px;
   }
 
   .logo > img {
@@ -111,65 +95,36 @@
     display: inline;
   }
 }
-
-@media screen and (min-width: 469px) and (max-width: 698px) {
+/*Mobil_full_content*/
+@media screen and (min-width: 320px) and (max-width: 698px) {
   header {
     display: flex;
     justify-content: center;
+    align-content: center;
   }
 
   .logo_und_titel {
     justify-content: center;
   }
 
+  .content_wrapper {
+    width: 300px;
+  }
+
   .dialog_titel {
-    width: 315px;
-    display: flex;
-    margin-top: 2%;
+    /*width: 315px;*/
+    margin-top: 10%;
     position: absolute;
     top: 1px;
-    left: 2px;
-    transform: translate(50px, 30px);
+    transform: translateY(50px);
+    display: flex;
+    justify-content: center;
   }
 
   .dialog_titel h1 {
     font-size: 32px;
-    margin: 10px 0px;
-    transform: translateX(130px);
     display: flex;
     justify-content: center;
-  }
-
-  .dialog_photo {
-    width: 315px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 0 10px;
-  }
-
-  #galerie_photo {
-    margin: 1px auto;
-    transform: translateY(80px);
-  }
-}
-
-/*Mobil_full_content*/
-
-@media screen and (min-width: 320px) and (max-width: 468px) {
-  header {
-    display: flex;
-    justify-content: center;
-  }
-
-  .content_wrapper {
-    gap: 170px;
-  }
-
-  .dialog_titel h1 {
-    font-size: 36px;
-    margin: 5px 0px;
-    transform: translateY(90px);
   }
 
   .dialog_photo {
@@ -180,30 +135,18 @@
     margin: 0 10px;
   }
 
-  .dialog_content {
-    width: 400px;
+  .galerie_photo {
+    width: 300px;
   }
 
-  #galerie_photo {
-    margin: 5px auto;
-    transform: translateY(-50px);
+  .galerie_photo img {
+    width: 105px;
+    height: 105px;
+    transform: translateY(80px);
   }
 
-  .dialog_top {
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: auto;
-  }
-
-  #btn_close {
-    position: absolute;
-    right: 11px;
-    border: none;
-    background-color: #06171e;
-    color: #fff;
-    font-family: "Figtree", sans-serif;
-    font-size: 24px;
+  #big_img {
+    width: 300px;
+    height: 300px;
   }
 }

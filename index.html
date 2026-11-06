@@ -27,7 +27,10 @@
                     <h1>Your Personal <br class="br_line"> Photo album</h1>
                 </div>
                 <div class="dialog_photo">
-                    <div class="galerie_photo" id="galerie_photo"> </div>
+
+                    <div class="galerie_photo" id="galerie_photo">
+                        <!-- <a class="galerie_photo" id="galerie_photo"  tabindex=""> </a> -->
+                    </div>
                     <dialog id="dialog_wrapper">
                         <div class="dialog_content">
                             <div class="dialog_top">
@@ -36,20 +39,23 @@
 
                                 </div>
                                 <div class="close_dialog">
-                                    <button id="btn_close" aria-label="Close">x</button>
+                                    <button type="button" class="btn_close" id="btn_close" aria-label="Close">x</button>
                                 </div>
                             </div>
 
 
                             <div class="single_dialog_img">
-                                <img id="big_img" src="" alt="">
+
+                                <img id="big_img" src="" alt="" tabindex="">
+
                             </div>
 
                             <div class="dialog_nav">
-                                <button id="btn_prev" aria-label="Image Preview">&larr;</button>
+                                <button type="button" id="btn_prev" aria-label="Image Preview">&larr;</button>
                                 <span id="counter"></span>
-                                <button id="btn_next" aria-label="Image Next">&rarr;</button>
+                                <button type="button" id="btn_next" aria-label="Image Next">&rarr;</button>
                             </div>
+
                         </div>
                     </dialog>
                 </div>
