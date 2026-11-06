@@ -73,7 +73,9 @@ function openDialog(event) {
 
     const scr = clickedImage.src;
     const alt = clickedImage.alt;
-    const clickedIndex = clickedImage.tabIndex;
+    //const clickedIndex = clickedImage.tabIndex;
+    const clickedIndex = Number(clickedImage.dataset.index);
+
     currentIndex = clickedIndex;
     showImage(clickedIndex);
     boxDialog.showModal();
